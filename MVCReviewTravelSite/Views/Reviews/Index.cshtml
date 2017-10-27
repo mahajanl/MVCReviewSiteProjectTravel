@@ -9,10 +9,28 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>@Html.DisplayFor(modelItem => item.ReviewTitle)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.Category.Location), reviewed @Html.DisplayFor(modelItem => item.ReviewDate)</p>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { @class = "btn btn-primary", role = "button" }) </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+@*<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
+            @Html.DisplayNameFor(model => model.Category.Location)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ReviewTitle)
@@ -20,13 +38,16 @@
         <th>
             @Html.DisplayNameFor(model => model.ReviewDate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewContent)
+        </th>
         <th></th>
-    </tr>
+    </tr>*@
 
-@foreach (var item in Model) {
+@*@foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            @Html.DisplayFor(modelItem => item.Category.Location)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReviewTitle)
@@ -35,11 +56,14 @@
             @Html.DisplayFor(modelItem => item.ReviewDate)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ReviewContent)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
         </td>
-    </tr>
-}
+    </tr>*@
 
-</table>
+
+

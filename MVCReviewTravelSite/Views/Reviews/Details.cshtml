@@ -7,32 +7,23 @@
 <h2>Details</h2>
 
 <div>
+    @*this is for a REVIEW, so there's no foreach loop because this is linked to one and only one, stop obsessing*@
     <h4>Review</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category.CategoryName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Category.CategoryName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewTitle)
-        </dt>
-
-        <dd>
+   
+        <h3>
             @Html.DisplayFor(model => model.ReviewTitle)
-        </dd>
+        </h3>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ReviewDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ReviewDate)
-        </dd>
+        <h3>
+            @Html.DisplayNameFor(model => model.Category.Location): @Html.DisplayFor(model => model.Category.Location)
+        </h3>
+        <p>
+            @Html.DisplayNameFor(model => model.ReviewDate): @Html.DisplayFor(model => model.ReviewDate)
+        </p>
+        <p>
+            @Html.DisplayFor(model => model.ReviewContent)
+        </p>
 
     </dl>
 </div>

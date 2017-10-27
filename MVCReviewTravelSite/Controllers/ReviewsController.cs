@@ -39,7 +39,7 @@ namespace MVCReviewTravelSite.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName");
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Location");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace MVCReviewTravelSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewID,ReviewTitle,ReviewDate,CategoryID")] Review review)
+        public ActionResult Create([Bind(Include = "ReviewID,ReviewTitle,ReviewDate,ReviewContent,CategoryID")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace MVCReviewTravelSite.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", review.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Location", review.CategoryID);
             return View(review);
         }
 
@@ -73,7 +73,7 @@ namespace MVCReviewTravelSite.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", review.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Location", review.CategoryID);
             return View(review);
         }
 
@@ -82,7 +82,7 @@ namespace MVCReviewTravelSite.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReviewID,ReviewTitle,ReviewDate,CategoryID")] Review review)
+        public ActionResult Edit([Bind(Include = "ReviewID,ReviewTitle,ReviewDate,ReviewContent,CategoryID")] Review review)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace MVCReviewTravelSite.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "CategoryName", review.CategoryID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "CategoryID", "Location", review.CategoryID);
             return View(review);
         }
 
