@@ -12,11 +12,15 @@ namespace MVCReviewTravelSite.Models
         [Key]
         public int ReviewID { get; set; }
 
+        public string ReviewerName { get; set; }
+
         public string ReviewTitle { get; set; }
 
         public DateTime ReviewDate { get; set; }
 
         public string ReviewContent { get; set; }
+
+        
         
         [ForeignKey("Category"), Display(Name = "Category")]
         public int CategoryID { get; set; }

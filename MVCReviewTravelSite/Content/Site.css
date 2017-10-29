@@ -20,11 +20,32 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    max-width: 500px;
 }
 
 .btn-primary {
+    display: block;
+    object-position: center;
+   margin: 20px 60px 20px 60px;
     background: white;
     color:darkblue;
     border: aqua inset;
-} 
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    
+}
+
+/*holding content stop this form later
+'Dancing Script', cursive*/
+
+    .btn-primary:hover {
+        background: aqua;
+        color:darkblue;
+    }
+
+
+.reviewItTitle {
+}
+
+blurbTitle {
+}
