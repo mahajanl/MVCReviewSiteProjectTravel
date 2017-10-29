@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.btn-primary {
+    background: white;
+    color:darkblue;
+    border: aqua inset;
+} 
