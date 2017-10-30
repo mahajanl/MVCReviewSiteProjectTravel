@@ -4,30 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="blurbTitle">See what other ReviewIt reviewers have to say</h2>
+<h2>Index</h2>
 
-<p >
-    @Html.ActionLink("Write a review", "Create")
+<p>
+    @Html.ActionLink("Create New", "Create")
 </p>
-
-<div class="row">
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-6 col-md-4">
-            @*<div class="thumbnail">*@
-                <div class="caption">
-                    <h3>@Html.DisplayFor(modelItem => item.ReviewTitle)</h3>
-                    <p>@Html.DisplayFor(modelItem => item.Category.Location), reviewed @Html.DisplayFor(modelItem => item.ReviewDate)</p>
-                    <p>@Html.ActionLink("Details", "Details", new { id = item.ReviewID }, new { @class = "btn btn-primary", role = "button", style = "float:right" }) </p>
-                </div>
-            @*</div>*@
-        </div>
-    }
-</div>
-
-
-
-@*<table class="table">
+<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Category.Location)
@@ -42,9 +24,9 @@
             @Html.DisplayNameFor(model => model.ReviewContent)
         </th>
         <th></th>
-    </tr>*@
+    </tr>
 
-@*@foreach (var item in Model) {
+@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Category.Location)
@@ -63,7 +45,7 @@
             @Html.ActionLink("Details", "Details", new { id=item.ReviewID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ReviewID })
         </td>
-    </tr>*@
+    </tr>
+}
 
-
-
+</table>

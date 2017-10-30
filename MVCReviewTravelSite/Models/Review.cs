@@ -20,8 +20,8 @@ namespace MVCReviewTravelSite.Models
 
         public string ReviewContent { get; set; }
 
-        
-        
+        public bool IsRecommended { get; set; }
+
         [ForeignKey("Category"), Display(Name = "Category")]
         public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
